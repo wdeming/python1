@@ -123,3 +123,26 @@ for i in range(n):
     element = list.pop(j)
     list.append(element)
 print("Перемешанный список: ", list)
+
+
+# Задание 6 Напишите программу, в которой пользователь будет задавать две строки, а программа - определять количество вхождений одной строки в другой.
+# -Для "abababb" и "aba" -> 2
+
+def Strings(string_a, string_b):
+    count = 0
+    len_a = len(string_a)
+    len_b = len(string_b)
+    if len_a >= len_b:
+        for i in range(len_a):
+            if string_b == string_a[i:i + len_b]:
+                count += 1
+        return count
+    else:
+        for i in range(len_b):
+            if string_a == string_b[i:i + len_a]:
+                count += 1
+        return count
+        
+string_a = input('Первая строка: ')
+string_b = input('Вторая строка: ')
+print(Strings(string_a, string_b))
